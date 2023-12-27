@@ -15,9 +15,11 @@ class _AppState extends State<App> with RouterMixin {
     if (kDebugMode) {
       debugInvertOversizedImages = true;
     }
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: (isDarkMode) ? ThemeData.dark() : ThemeData.light(),
       routerConfig: router,
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/widgets.dart';
+
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
 
@@ -9,11 +11,13 @@ class SettingsView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Settings'),
       ),
-    body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: const Text('L10n.current.sign_out'),
-        ),
+      body: const Column(
+        children: [
+          SoundVolumeSetting(),
+          DarkModeSetting(),
+          VibrationSetting(),
+          LanguageSetting(),
+        ],
       ),
     );
   }
