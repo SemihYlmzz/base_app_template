@@ -23,7 +23,7 @@ class InjectionContainer {
       // )
       //! CUBITS
       ..registerLazySingleton<DevicePrefsCubit>(DevicePrefsCubit.new);
-
+  
     // //! Cubits initializings
     // await getIt<PermissionCubit>().initPermissionStatus();
 

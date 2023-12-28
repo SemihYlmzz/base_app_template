@@ -1,8 +1,8 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 import 'device_prefs.dart';
 
-class DevicePrefsCubit extends Cubit<DevicePrefsState> {
+class DevicePrefsCubit extends HydratedCubit<DevicePrefsState> {
   DevicePrefsCubit() : super(const DevicePrefsState());
 
   void updateDeviceLanguage(AppLanguages selectedAppLanguage) {
@@ -20,18 +20,30 @@ class DevicePrefsCubit extends Cubit<DevicePrefsState> {
       ),
     );
   }
-  void updateCanVibrate(bool canVibrate){
-     emit(state.copyWith(canVibrate: canVibrate));
+
+  void updateCanVibrate(bool canVibrate) {
+    emit(state.copyWith(canVibrate: canVibrate));
   }
-   void updateSoundVolume(double newSoundVolume){
-     emit(state.copyWith(soundVolume: newSoundVolume));
+
+  void updateSoundVolume(double newSoundVolume) {
+    emit(state.copyWith(soundVolume: newSoundVolume));
   }
-  
+
   String getCurrentAppLanguageCode() {
     return switch (state.appLanguage) {
       AppLanguages.deviceLanguage => '',
       AppLanguages.english => 'en',
       AppLanguages.turkish => 'tr',
     };
+  }
+
+  @override
+  DevicePrefsState? fromJson(Map<String, dynamic> json) {
+    return DevicePrefsState.fromJson(json);
+  }
+
+  @override
+  Map<String, dynamic>? toJson(DevicePrefsState state) {
+    return state.toJson();
   }
 }
