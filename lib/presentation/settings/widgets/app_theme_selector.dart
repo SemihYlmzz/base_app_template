@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../app/cubit/cubit.dart';
+import '../../../app/gen/l10n/l10n.dart';
+import '../../../initialize/injection_container.dart';
 
 class AppThemeSelector extends StatelessWidget {
   const AppThemeSelector({super.key});
@@ -11,12 +13,14 @@ class AppThemeSelector extends StatelessWidget {
     final appTheme = context.select<DevicePrefsCubit, AppTheme>(
       (value) => value.state.appTheme,
     );
-
+    context.select<DevicePrefsCubit, AppLanguages>(
+      (value) => value.state.appLanguage,
+    );
     String themeName(AppTheme appTheme) {
       return switch (appTheme) {
-        AppTheme.deviceTheme => 'Device Theme',
-        AppTheme.darkTheme => 'Dark Theme',
-        AppTheme.lightTheme => 'Light Theme',
+        AppTheme.deviceTheme => getIt<L10n>().device_theme,
+        AppTheme.darkTheme => getIt<L10n>().dark_theme,
+        AppTheme.lightTheme => getIt<L10n>().light_theme,
       };
     }
 

@@ -1,5 +1,9 @@
+import 'package:base_app_template/app/gen/l10n/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../app/cubit/cubit.dart';
+import '../../../initialize/injection_container.dart';
 import '../widgets/widgets.dart';
 
 class SettingsView extends StatelessWidget {
@@ -7,31 +11,34 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.select<DevicePrefsCubit, AppLanguages>(
+      (value) => value.state.appLanguage,
+    );
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: Text(getIt<L10n>().settings),
       ),
-      body: const Column(
+      body: Column(
         children: [
           Setting(
             settingIconData: Icons.volume_up,
-            settingName: 'Sound Volume',
-            settingWidget: SoundVolumeSlider(),
+            settingName: getIt<L10n>().sound_volume,
+            settingWidget: const SoundVolumeSlider(),
           ),
           Setting(
             settingIconData: Icons.dark_mode,
-            settingName: 'App Theme',
-            settingWidget: AppThemeSelector(),
+            settingName: getIt<L10n>().app_theme,
+            settingWidget: const AppThemeSelector(),
           ),
           Setting(
             settingIconData: Icons.vibration,
-            settingName: 'Vibration',
-            settingWidget: VibrationPreferenceSwitch(),
+            settingName: getIt<L10n>().vibration,
+            settingWidget: const VibrationPreferenceSwitch(),
           ),
           Setting(
             settingIconData: Icons.language,
-            settingName: 'Language',
-            settingWidget: AppLanguageSelector(),
+            settingName: getIt<L10n>().language,
+            settingWidget: const AppLanguageSelector(),
           ),
         ],
       ),

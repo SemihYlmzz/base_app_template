@@ -1,0 +1,19 @@
+{
+    "pub_dev": "Pub Dev",
+    "youtube": "Youtube",
+    "versions": "Versions",
+
+    "settings": "Settings",
+
+    "sound_volume": "Sound Volume",
+    "app_theme": "App Theme",
+    "vibration": "Vibration",
+    "language": "Language",
+
+    "device_theme": "Device Theme",
+    "light_theme": "Light Theme",
+    "dark_theme": "Dark Theme",
+
+    "device_language": "Device Language"
+
+}

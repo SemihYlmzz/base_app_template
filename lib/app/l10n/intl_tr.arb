@@ -1,0 +1,19 @@
+{
+    "pub_dev": "Pub Dev",
+    "youtube": "Youtube",
+    "versions": "Versiyonlar",
+
+    "settings": "Ayarlar",
+
+    "sound_volume": "Ses Seviyesi",
+    "app_theme": "Uygulama Teması",
+    "vibration": "Titreşim",
+    "language": "Dil",
+
+    "device_theme": "Cihaz Teması",
+    "light_theme": "Açık Tema",
+    "dark_theme": "Koyu Tema",
+
+    "device_language": "Cihaz Dili"
+
+}

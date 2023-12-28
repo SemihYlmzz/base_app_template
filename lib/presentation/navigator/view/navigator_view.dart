@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../app/gen/l10n/l10n.dart';
+import '../../../initialize/injection_container.dart';
+
 class NavigatorView extends StatelessWidget {
   const NavigatorView({
     required this.navigationShell,
@@ -26,31 +29,31 @@ class NavigatorView extends StatelessWidget {
         ),
         enableFeedback: true,
         onTap: navigationShell.goBranch,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            label: 'Pub Dev',
-            icon: Icon(
+            label: getIt<L10n>().pub_dev,
+            icon: const Icon(
               Icons.verified_outlined,
             ),
-            activeIcon: Icon(
+            activeIcon: const Icon(
               Icons.verified,
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Youtube',
-            icon: Icon(
+            label: getIt<L10n>().youtube,
+            icon: const Icon(
               Icons.play_arrow_outlined,
             ),
-            activeIcon: Icon(
+            activeIcon: const Icon(
               Icons.play_arrow,
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Versions',
-            icon: Icon(
+            label: getIt<L10n>().versions,
+            icon: const Icon(
               Icons.cloud_done_outlined,
             ),
-            activeIcon: Icon(
+            activeIcon: const Icon(
               Icons.cloud_done,
             ),
           ),

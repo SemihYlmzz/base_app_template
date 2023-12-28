@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../app/cubit/cubit.dart';
+import '../../../app/gen/l10n/l10n.dart';
+import '../../../initialize/injection_container.dart';
 
 class AppLanguageSelector extends StatelessWidget {
   const AppLanguageSelector({super.key});
@@ -14,7 +16,7 @@ class AppLanguageSelector extends StatelessWidget {
 
     String languageName(AppLanguages appTheme) {
       return switch (appTheme) {
-        AppLanguages.deviceLanguage => 'Device Language',
+        AppLanguages.deviceLanguage => getIt<L10n>().device_language,
         AppLanguages.english => 'English',
         AppLanguages.turkish => 'Türkçe',
       };
