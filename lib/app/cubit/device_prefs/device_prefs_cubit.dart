@@ -20,7 +20,13 @@ class DevicePrefsCubit extends Cubit<DevicePrefsState> {
       ),
     );
   }
-
+  void updateCanVibrate(bool canVibrate){
+     emit(state.copyWith(canVibrate: canVibrate));
+  }
+   void updateSoundVolume(double newSoundVolume){
+     emit(state.copyWith(soundVolume: newSoundVolume));
+  }
+  
   String getCurrentAppLanguageCode() {
     return switch (state.appLanguage) {
       AppLanguages.deviceLanguage => '',

@@ -22,6 +22,8 @@ DevicePrefsState _$DevicePrefsStateFromJson(Map<String, dynamic> json) {
 mixin _$DevicePrefsState {
   AppLanguages get appLanguage => throw _privateConstructorUsedError;
   AppTheme get appTheme => throw _privateConstructorUsedError;
+  bool get canVibrate => throw _privateConstructorUsedError;
+  double get soundVolume => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +37,11 @@ abstract class $DevicePrefsStateCopyWith<$Res> {
           DevicePrefsState value, $Res Function(DevicePrefsState) then) =
       _$DevicePrefsStateCopyWithImpl<$Res, DevicePrefsState>;
   @useResult
-  $Res call({AppLanguages appLanguage, AppTheme appTheme});
+  $Res call(
+      {AppLanguages appLanguage,
+      AppTheme appTheme,
+      bool canVibrate,
+      double soundVolume});
 }
 
 /// @nodoc
@@ -53,6 +59,8 @@ class _$DevicePrefsStateCopyWithImpl<$Res, $Val extends DevicePrefsState>
   $Res call({
     Object? appLanguage = null,
     Object? appTheme = null,
+    Object? canVibrate = null,
+    Object? soundVolume = null,
   }) {
     return _then(_value.copyWith(
       appLanguage: null == appLanguage
@@ -63,6 +71,14 @@ class _$DevicePrefsStateCopyWithImpl<$Res, $Val extends DevicePrefsState>
           ? _value.appTheme
           : appTheme // ignore: cast_nullable_to_non_nullable
               as AppTheme,
+      canVibrate: null == canVibrate
+          ? _value.canVibrate
+          : canVibrate // ignore: cast_nullable_to_non_nullable
+              as bool,
+      soundVolume: null == soundVolume
+          ? _value.soundVolume
+          : soundVolume // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -75,7 +91,11 @@ abstract class _$$DevicePrefsStateImplCopyWith<$Res>
       __$$DevicePrefsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppLanguages appLanguage, AppTheme appTheme});
+  $Res call(
+      {AppLanguages appLanguage,
+      AppTheme appTheme,
+      bool canVibrate,
+      double soundVolume});
 }
 
 /// @nodoc
@@ -91,6 +111,8 @@ class __$$DevicePrefsStateImplCopyWithImpl<$Res>
   $Res call({
     Object? appLanguage = null,
     Object? appTheme = null,
+    Object? canVibrate = null,
+    Object? soundVolume = null,
   }) {
     return _then(_$DevicePrefsStateImpl(
       appLanguage: null == appLanguage
@@ -101,6 +123,14 @@ class __$$DevicePrefsStateImplCopyWithImpl<$Res>
           ? _value.appTheme
           : appTheme // ignore: cast_nullable_to_non_nullable
               as AppTheme,
+      canVibrate: null == canVibrate
+          ? _value.canVibrate
+          : canVibrate // ignore: cast_nullable_to_non_nullable
+              as bool,
+      soundVolume: null == soundVolume
+          ? _value.soundVolume
+          : soundVolume // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -112,7 +142,9 @@ class _$DevicePrefsStateImpl
     implements _DevicePrefsState {
   const _$DevicePrefsStateImpl(
       {this.appLanguage = AppLanguages.deviceLanguage,
-      this.appTheme = AppTheme.deviceTheme});
+      this.appTheme = AppTheme.deviceTheme,
+      this.canVibrate = true,
+      this.soundVolume = 0.75});
 
   factory _$DevicePrefsStateImpl.fromJson(Map<String, dynamic> json) =>
       _$$DevicePrefsStateImplFromJson(json);
@@ -123,10 +155,16 @@ class _$DevicePrefsStateImpl
   @override
   @JsonKey()
   final AppTheme appTheme;
+  @override
+  @JsonKey()
+  final bool canVibrate;
+  @override
+  @JsonKey()
+  final double soundVolume;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'DevicePrefsState(appLanguage: $appLanguage, appTheme: $appTheme)';
+    return 'DevicePrefsState(appLanguage: $appLanguage, appTheme: $appTheme, canVibrate: $canVibrate, soundVolume: $soundVolume)';
   }
 
   @override
@@ -135,7 +173,9 @@ class _$DevicePrefsStateImpl
     properties
       ..add(DiagnosticsProperty('type', 'DevicePrefsState'))
       ..add(DiagnosticsProperty('appLanguage', appLanguage))
-      ..add(DiagnosticsProperty('appTheme', appTheme));
+      ..add(DiagnosticsProperty('appTheme', appTheme))
+      ..add(DiagnosticsProperty('canVibrate', canVibrate))
+      ..add(DiagnosticsProperty('soundVolume', soundVolume));
   }
 
   @override
@@ -146,12 +186,17 @@ class _$DevicePrefsStateImpl
             (identical(other.appLanguage, appLanguage) ||
                 other.appLanguage == appLanguage) &&
             (identical(other.appTheme, appTheme) ||
-                other.appTheme == appTheme));
+                other.appTheme == appTheme) &&
+            (identical(other.canVibrate, canVibrate) ||
+                other.canVibrate == canVibrate) &&
+            (identical(other.soundVolume, soundVolume) ||
+                other.soundVolume == soundVolume));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, appLanguage, appTheme);
+  int get hashCode =>
+      Object.hash(runtimeType, appLanguage, appTheme, canVibrate, soundVolume);
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +216,9 @@ class _$DevicePrefsStateImpl
 abstract class _DevicePrefsState implements DevicePrefsState {
   const factory _DevicePrefsState(
       {final AppLanguages appLanguage,
-      final AppTheme appTheme}) = _$DevicePrefsStateImpl;
+      final AppTheme appTheme,
+      final bool canVibrate,
+      final double soundVolume}) = _$DevicePrefsStateImpl;
 
   factory _DevicePrefsState.fromJson(Map<String, dynamic> json) =
       _$DevicePrefsStateImpl.fromJson;
@@ -180,6 +227,10 @@ abstract class _DevicePrefsState implements DevicePrefsState {
   AppLanguages get appLanguage;
   @override
   AppTheme get appTheme;
+  @override
+  bool get canVibrate;
+  @override
+  double get soundVolume;
   @override
   @JsonKey(ignore: true)
   _$$DevicePrefsStateImplCopyWith<_$DevicePrefsStateImpl> get copyWith =>

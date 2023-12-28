@@ -9,6 +9,8 @@ class DevicePrefsState with _$DevicePrefsState {
   const factory DevicePrefsState({
     @Default(AppLanguages.deviceLanguage) AppLanguages appLanguage,
     @Default(AppTheme.deviceTheme) AppTheme appTheme,
+    @Default(true) bool canVibrate,
+    @Default(0.75) double soundVolume,
   }) = _DevicePrefsState;
 
   factory DevicePrefsState.fromJson(Map<String, Object?> json) => _$DevicePrefsStateFromJson(

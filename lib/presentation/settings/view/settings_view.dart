@@ -13,10 +13,26 @@ class SettingsView extends StatelessWidget {
       ),
       body: const Column(
         children: [
-          SoundVolumeSetting(),
-          DarkModeSetting(),
-          VibrationSetting(),
-          LanguageSetting(),
+          Setting(
+            settingIconData: Icons.volume_up,
+            settingName: 'Sound Volume',
+            settingWidget: SoundVolumeSlider(),
+          ),
+          Setting(
+            settingIconData: Icons.dark_mode,
+            settingName: 'App Theme',
+            settingWidget: AppThemeSelector(),
+          ),
+          Setting(
+            settingIconData: Icons.vibration,
+            settingName: 'Vibration',
+            settingWidget: VibrationPreferenceSwitch(),
+          ),
+          Setting(
+            settingIconData: Icons.language,
+            settingName: 'Language',
+            settingWidget: AppLanguageSelector(),
+          ),
         ],
       ),
     );

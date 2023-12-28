@@ -14,6 +14,8 @@ _$DevicePrefsStateImpl _$$DevicePrefsStateImplFromJson(
               AppLanguages.deviceLanguage,
       appTheme: $enumDecodeNullable(_$AppThemeEnumMap, json['appTheme']) ??
           AppTheme.deviceTheme,
+      canVibrate: json['canVibrate'] as bool? ?? true,
+      soundVolume: (json['soundVolume'] as num?)?.toDouble() ?? 0.75,
     );
 
 Map<String, dynamic> _$$DevicePrefsStateImplToJson(
@@ -21,6 +23,8 @@ Map<String, dynamic> _$$DevicePrefsStateImplToJson(
     <String, dynamic>{
       'appLanguage': _$AppLanguagesEnumMap[instance.appLanguage]!,
       'appTheme': _$AppThemeEnumMap[instance.appTheme]!,
+      'canVibrate': instance.canVibrate,
+      'soundVolume': instance.soundVolume,
     };
 
 const _$AppLanguagesEnumMap = {
