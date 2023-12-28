@@ -1,6 +1,8 @@
-import 'package:base_app_template/app/app.dart';
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-void main() {
-  runApp(const App());
+import 'app/app.dart';
+import 'initialize/bootstrap.dart';
+
+void main() async {
+  unawaited(bootstrap(const App()));
 }
