@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'gen/l10n/l10n.dart';
+import 'router/app_router.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -15,7 +16,7 @@ class App extends StatefulWidget {
   State<App> createState() => _AppState();
 }
 
-class _AppState extends State<App> with RouterMixin {
+class _AppState extends State<App> with RouterMixin{
   @override
   Widget build(BuildContext context) {
     if (kDebugMode) {

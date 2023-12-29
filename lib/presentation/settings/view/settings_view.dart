@@ -1,4 +1,5 @@
 import 'package:base_app_template/app/gen/l10n/l10n.dart';
+import 'package:base_app_template/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,6 +21,11 @@ class SettingsView extends StatelessWidget {
       ),
       body: Column(
         children: [
+          ElevatedButton(
+              onPressed: () {
+                // context.goNamed(VersionsScreen.name);
+              },
+              child: const Text('Go Back')),
           Setting(
             settingIconData: Icons.volume_up,
             settingName: getIt<L10n>().sound_volume,

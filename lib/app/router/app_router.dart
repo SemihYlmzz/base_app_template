@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
-// import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../presentation/presentation.dart';
 import '../app.dart';
 
 mixin RouterMixin on State<App> {
+  static final GlobalKey<NavigatorState> parentNavigatorKey =
+      GlobalKey<NavigatorState>();
+
   final _router = GoRouter(
     initialLocation: PubDevScreen.path,
+    navigatorKey: parentNavigatorKey,
     routes: [
       StatefulShellRoute.indexedStack(
         builder: (context, state, statefullNavigationShell) => NavigatorScreen(
@@ -53,6 +56,7 @@ mixin RouterMixin on State<App> {
       GoRoute(
         path: SettingsScreen.path,
         name: SettingsScreen.name,
+        parentNavigatorKey: parentNavigatorKey,
         builder: (context, state) => const SettingsScreen(),
       ),
     ],

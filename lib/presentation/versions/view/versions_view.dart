@@ -1,3 +1,4 @@
+import 'package:base_app_template/app/router/app_router.dart';
 import 'package:base_app_template/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -11,12 +12,13 @@ class VersionsView extends StatelessWidget {
   const VersionsView({super.key});
 
   @override
-  Widget build(BuildContext context) {  context.select<DevicePrefsCubit, AppLanguages>(
+  Widget build(BuildContext context) {
+    context.select<DevicePrefsCubit, AppLanguages>(
       (value) => value.state.appLanguage,
     );
     return Scaffold(
       appBar: AppBar(
-        title:  Text(getIt<L10n>().versions),
+        title: Text(getIt<L10n>().versions),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
