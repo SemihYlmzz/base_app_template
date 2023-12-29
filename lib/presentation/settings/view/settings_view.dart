@@ -21,11 +21,6 @@ class SettingsView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ElevatedButton(
-              onPressed: () {
-                // context.goNamed(VersionsScreen.name);
-              },
-              child: const Text('Go Back')),
           Setting(
             settingIconData: Icons.volume_up,
             settingName: getIt<L10n>().sound_volume,

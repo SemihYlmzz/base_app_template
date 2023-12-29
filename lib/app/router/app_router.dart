@@ -10,9 +10,27 @@ mixin RouterMixin on State<App> {
       GlobalKey<NavigatorState>();
 
   final _router = GoRouter(
-    initialLocation: PubDevScreen.path,
+    initialLocation: SignInScreen.path,
     navigatorKey: parentNavigatorKey,
     routes: [
+      GoRoute(
+        path: SignInScreen.path,
+        name: SignInScreen.name,
+        parentNavigatorKey: parentNavigatorKey,
+        builder: (context, state) => const SignInScreen(),
+      ),
+      GoRoute(
+        path: SignUpScreen.path,
+        name: SignUpScreen.name,
+        parentNavigatorKey: parentNavigatorKey,
+        builder: (context, state) => const SignUpScreen(),
+      ),
+      GoRoute(
+        path: MailVerificationScreen.path,
+        name: MailVerificationScreen.name,
+        parentNavigatorKey: parentNavigatorKey,
+        builder: (context, state) => const MailVerificationScreen(),
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, statefullNavigationShell) => NavigatorScreen(
           navigationShell: statefullNavigationShell,
