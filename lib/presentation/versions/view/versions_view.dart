@@ -1,8 +1,7 @@
-import 'package:base_app_template/app/router/app_router.dart';
 import 'package:base_app_template/presentation/presentation.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../app/cubit/cubit.dart';
 import '../../../app/gen/l10n/l10n.dart';
@@ -21,7 +20,7 @@ class VersionsView extends StatelessWidget {
         title: Text(getIt<L10n>().versions),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 8.0),
+            padding: const EdgeInsets.only(right: 8),
             child: IconButton(
               onPressed: () {
                 context.pushNamed(SettingsScreen.name);
@@ -30,7 +29,7 @@ class VersionsView extends StatelessWidget {
                 Icons.settings,
               ),
             ),
-          )
+          ),
         ],
       ),
       body: Center(

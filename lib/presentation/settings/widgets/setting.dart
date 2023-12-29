@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Setting extends StatelessWidget {
@@ -28,16 +27,17 @@ class Setting extends StatelessWidget {
           ],
         ),
         Flexible(
-            child: Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: SizedBox(
-            width: 300,
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: settingWidget,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: SizedBox(
+              width: 300,
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: settingWidget,
+              ),
             ),
           ),
-        )),
+        ),
       ],
     );
   }

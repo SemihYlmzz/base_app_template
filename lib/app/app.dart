@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'gen/l10n/l10n.dart';
-import 'router/app_router.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -16,7 +15,7 @@ class App extends StatefulWidget {
   State<App> createState() => _AppState();
 }
 
-class _AppState extends State<App> with RouterMixin{
+class _AppState extends State<App> with RouterMixin {
   @override
   Widget build(BuildContext context) {
     if (kDebugMode) {
@@ -27,11 +26,11 @@ class _AppState extends State<App> with RouterMixin{
       providers: [
         BlocProvider<DevicePrefsCubit>(
           create: (context) => getIt<DevicePrefsCubit>(),
-        )
+        ),
       ],
       child: BlocBuilder<DevicePrefsCubit, DevicePrefsState>(
         builder: (context, devicePrefsState) {
-          ThemeData? appTheme = switch (devicePrefsState.appTheme) {
+          var appTheme = switch (devicePrefsState.appTheme) {
             AppTheme.deviceTheme => null,
             AppTheme.lightTheme => ThemeData.light(),
             AppTheme.darkTheme => ThemeData.dark(),
@@ -70,8 +69,8 @@ class _AppState extends State<App> with RouterMixin{
   }
 
   ThemeData getDeviceTheme() {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isDarkMode = brightness == Brightness.dark;
+    final brightness = MediaQuery.of(context).platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
     if (isDarkMode) {
       return ThemeData.dark();
     } else {

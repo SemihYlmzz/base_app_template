@@ -21,7 +21,7 @@ class DevicePrefsCubit extends HydratedCubit<DevicePrefsState> {
     );
   }
 
-  void updateCanVibrate(bool canVibrate) {
+  void updateCanVibrate({required bool canVibrate}) {
     emit(state.copyWith(canVibrate: canVibrate));
   }
 

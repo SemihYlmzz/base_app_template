@@ -15,7 +15,7 @@ class SignInView extends StatelessWidget {
         ),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.all(32.0),
+            padding: const EdgeInsets.all(32),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -26,7 +26,9 @@ class SignInView extends StatelessWidget {
                 ElevatedButton(onPressed: () {}, child: const Text('Sign In')),
                 const SizedBox(height: 32),
                 TextButton(
-                    onPressed: () {}, child: const Text('Forgot Password')),
+                  onPressed: () {},
+                  child: const Text('Forgot Password'),
+                ),
                 const SizedBox(height: 8),
                 TextButton(onPressed: () {}, child: const Text('Sign Up Now!')),
               ],

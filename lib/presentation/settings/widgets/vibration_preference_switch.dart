@@ -13,7 +13,7 @@ class VibrationPreferenceSwitch extends StatelessWidget {
     return Switch.adaptive(
       value: canVibrate,
       onChanged: (newValue) {
-        context.read<DevicePrefsCubit>().updateCanVibrate(newValue);
+        context.read<DevicePrefsCubit>().updateCanVibrate(canVibrate: newValue);
       },
     );
   }

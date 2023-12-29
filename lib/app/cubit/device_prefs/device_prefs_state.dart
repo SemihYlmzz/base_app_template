@@ -13,18 +13,20 @@ class DevicePrefsState with _$DevicePrefsState {
     @Default(0.75) double soundVolume,
   }) = _DevicePrefsState;
 
-  factory DevicePrefsState.fromJson(Map<String, Object?> json) => _$DevicePrefsStateFromJson(
+  factory DevicePrefsState.fromJson(Map<String, Object?> json) =>
+      _$DevicePrefsStateFromJson(
         json,
       );
-      }
+}
 
- enum AppLanguages {
-   deviceLanguage,
-   english,
-   turkish,
- }
- enum AppTheme {
-   deviceTheme,
-   lightTheme,
-   darkTheme,
- }
+enum AppLanguages {
+  deviceLanguage,
+  english,
+  turkish,
+}
+
+enum AppTheme {
+  deviceTheme,
+  lightTheme,
+  darkTheme,
+}
